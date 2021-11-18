@@ -1,5 +1,5 @@
 from django.db import models
-import datetime
+from datetime import datetime
 
 
 class product(models.Model):
@@ -7,7 +7,7 @@ class product(models.Model):
     name=models.CharField(max_length=40,null=False,blank=False)
     price=models.FloatField()
     is_published=models.BooleanField(default=True)
-    created_at=models.DateTimeField(default=datetime,blank=True)
+    created_at=models.DateTimeField(default=datetime.now,blank=True)
     def __str__(self):
         return self.name
 
